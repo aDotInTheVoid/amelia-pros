@@ -8,8 +8,8 @@ void chassisSet(int forward, int side, int turn)
     int leftBackVal = forward - side + turn;
     int rightBackVal = -forward - side + turn;
 
-    motorSet(leftFrontMotor, leftFrontVal);
-    motorSet(rightFrontMotor, rightFrontVal);
-    motorSet(leftBackMotor, leftBackVal);
-    motorSet(rightBackMotor, rightBackVal);
+    motorSet(leftFrontMotor, -leftFrontVal);
+    motorSet(rightFrontMotor, -rightFrontVal);
+    motorSet(leftBackMotor, -leftBackVal);
+    motorSet(rightBackMotor,-rightBackVal);
 }
