@@ -1,5 +1,6 @@
 #include "main.h"    // includes API.h and other headers
 #include "chassis.h" // redundant, but ensures that the corresponding header file (chassis.h) is included
+#include "config.h"
 
 void chassisSet(int forward, int side, int turn)
 {
