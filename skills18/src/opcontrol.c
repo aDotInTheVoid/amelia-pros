@@ -12,6 +12,7 @@
 
 #include "main.h"
 #include "chassis.h"
+#include "config.h"
 
 const int joystickNumber = 1;
 

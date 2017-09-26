@@ -1,5 +1,6 @@
 #include "main.h"    // includes API.h and other headers
 #include "chassis.h" // redundant, but ensures that the corresponding header file (chassis.h) is included
+#include "config.h"
 
 void chassisSet(int forward, int side, int turn)
 {
@@ -8,8 +9,8 @@ void chassisSet(int forward, int side, int turn)
     int leftBackVal = forward - side + turn;
     int rightBackVal = -forward - side + turn;
 
-    motorSet(leftFrontMotor, leftFrontVal);
-    motorSet(rightFrontMotor, rightFrontVal);
-    motorSet(leftBackMotor, leftBackVal);
-    motorSet(rightBackMotor, rightBackVal);
+    motorSet(leftFrontMotor, -leftFrontVal);
+    motorSet(rightFrontMotor, -rightFrontVal);
+    motorSet(leftBackMotor, -leftBackVal);
+    motorSet(rightBackMotor,-rightBackVal);
 }
