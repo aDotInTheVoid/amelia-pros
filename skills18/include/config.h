@@ -1,7 +1,7 @@
 #ifndef _CONFIG_H_
 #define _CONFIG_H_
 
-enum motors {
+enum Motor {
     leftIntakeMotor = 1,
     rightFrontMotor, // 2
     leftBackMotor, // 3
@@ -14,7 +14,7 @@ enum motors {
     rightIntakeMotor, // 10
 };
 
-enum joysticks {
+enum Joystick {
     turnJoystick = 1,
     forwardJoystick = 3,
     sideJoystick, // 4
@@ -22,11 +22,11 @@ enum joysticks {
     clawButtons, // 6
 };
 
-enum digitalSensors {
+enum DigitalSensor {
     limitSwitch = 1,
 };
 
-enum IMEs {
+enum IME {
     armEncoder,
     clawLiftEncoder,
 };
