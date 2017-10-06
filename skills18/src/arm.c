@@ -15,3 +15,7 @@ void armSet(bool up, bool down, int speed)
         motorSet(rightArmMotor, 0);
     }
 }
+
+void armSetTarget(int target) {
+
+}

@@ -22,4 +22,13 @@ enum joysticks {
     clawButtons, // 6
 };
 
+enum digitalSensors {
+    limitSwitch = 1,
+};
+
+enum IMEs {
+    armEncoder,
+    clawLiftEncoder,
+};
+
 #endif /* end of include guard: _CONFIG_H_ */

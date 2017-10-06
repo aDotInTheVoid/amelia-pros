@@ -11,6 +11,7 @@
  */
 
 #include "main.h"
+#include "config.h"
 
 /*
  * Runs pre-initialization code. This function will be started in kernel mode one time while the
@@ -21,6 +22,7 @@
  * configure a UART port (usartOpen()) but cannot set up an LCD (lcdInit()).
  */
 void initializeIO() {
+    // pinMode(limitSwitch, INPUT);
 }
 
 /*
@@ -37,4 +39,5 @@ void initializeIO() {
  * can be implemented in this task if desired.
  */
 void initialize() {
+    imeInitializeAll();
 }
