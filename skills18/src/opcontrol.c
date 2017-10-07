@@ -36,11 +36,13 @@ const int joystickNumber = 1;
  */
 void operatorControl() {
     while (1) {
+
         // Get chassis motion
         int forward = joystickGetAnalog(joystickNumber, forwardJoystick);
         int side = joystickGetAnalog(joystickNumber, sideJoystick);
         int turn = joystickGetAnalog(joystickNumber, turnJoystick);
         chassisSet(forward, side, turn);
+
         // Get arm motion
         bool up = joystickGetDigital(joystickNumber, armButtons, JOY_UP);
         bool down = joystickGetDigital(joystickNumber, armButtons, JOY_DOWN);
