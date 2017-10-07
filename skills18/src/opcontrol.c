@@ -16,6 +16,7 @@
 #include "config.h"
 
 const int joystickNumber = 1;
+const int armSpeed = 50;
 
 /*
  * Runs the user operator control code. This function will be started in its own task with the
@@ -46,6 +47,6 @@ void operatorControl() {
         // Get arm motion
         bool up = joystickGetDigital(joystickNumber, armButtons, JOY_UP);
         bool down = joystickGetDigital(joystickNumber, armButtons, JOY_DOWN);
-        armSet(up, down, 50);
+        armSet(up, down, armSpeed);
     }
 }
