@@ -20,6 +20,7 @@ enum Joystick {
     sideJoystick, // 4
     armButtons, // 5
     clawButtons, // 6
+    intakeButtons, // 7
 };
 
 enum DigitalSensor {
