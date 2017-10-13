@@ -4,6 +4,7 @@ notifications:
 language: c
 
 script: 
+  cd skills18
   make
 
 after_success:
