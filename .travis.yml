@@ -1,7 +1,7 @@
-notifications:
-  email: false
+sudo: required
 
-language: c
+before_install:
+ - apt-get install gcc-arm-embedded
 
 script: 
   - cd skills18
