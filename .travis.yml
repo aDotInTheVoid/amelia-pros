@@ -1,0 +1,17 @@
+sudo: required
+
+language: c
+
+python: 3.5
+
+before_install:
+ - git clone https://github.com/purduesigbots/pros-cli.git
+ - sudo pip install -e pros-cli/
+
+script: 
+  - cd skills18
+  - make
+
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)

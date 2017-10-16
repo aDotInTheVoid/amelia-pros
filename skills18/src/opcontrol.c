@@ -14,6 +14,7 @@
 #include "chassis.h"
 #include "arm.h"
 #include "config.h"
+#include "intake.h"
 
 const int joystickNumber = 1;
 const int armSpeed = 100;
@@ -47,6 +48,13 @@ void operatorControl() {
         // Get arm motion
         bool up = joystickGetDigital(joystickNumber, armButtons, JOY_UP);
         bool down = joystickGetDigital(joystickNumber, armButtons, JOY_DOWN);
+
         armSet(up, down, armSpeed);
+
+        // Get intake motion
+        bool intakeUp = joystickGetDigital(joystickNumber, intakeButtons, JOY_UP);
+        bool intakeDown = joystickGetDigital(joystickNumber, intakeButtons, JOY_DOWN);
+        intakeSet(intakeUp, intakeDown, 100);
+
     }
 }
