@@ -20,6 +20,9 @@ script:
   #- which gcc
   #- gcc --version
   - echo $LN
+  - echo $CC
+  - which CC
+  - which LN
   - find /usr/ -name "libstdc++.a"
   - cd skills18
   - make
