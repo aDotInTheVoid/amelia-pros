@@ -19,6 +19,7 @@ before_install:
 script: 
   #- which gcc
   #- gcc --version
+  - echo $LN
   - find /usr/ -name "libstdc++.a"
   - cd skills18
   - make
