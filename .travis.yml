@@ -19,7 +19,7 @@ script:
   #- gcc --version
   #- find /usr/bin/ -name "libstdc++.so.6"
   - cd skills18
-  - make
+  - make -fno-exceptions
 
 
 after_success:
