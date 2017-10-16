@@ -17,9 +17,9 @@ before_install:
 script: 
   #- which gcc
   #- gcc --version
-  #- find /usr/bin/ -name "libstdc++.so.6"
+  - find /usr/ -name "libstdc++.so.6"
   - cd skills18
-  - make -fno-exceptions
+  #- make -fno-exceptions
 
 
 after_success:
