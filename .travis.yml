@@ -26,4 +26,4 @@ script:
     - echo $LD_LIBRARY_PATH
     - echo $LIBRARY_PATH
     - cd skills18
-    - make
+    - make -j1 all
