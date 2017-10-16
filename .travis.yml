@@ -1,8 +1,10 @@
 sudo: required
 
+language: c
+
 before_install:
  - git clone https://github.com/purduesigbots/pros-cli.git
- - pip install -e pros-cli/
+ - sudo pip install -e pros-cli/
 
 script: 
   - cd skills18
