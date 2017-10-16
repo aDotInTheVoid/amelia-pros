@@ -1,7 +1,7 @@
 sudo: required
 
 before_install:
- - sudo apt-get install gcc-arm-embedded
+ - sudo apt-get install arm-none-eabi-gcc
 
 script: 
   - cd skills18
