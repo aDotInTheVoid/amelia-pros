@@ -12,9 +12,9 @@ before_install:
  - sudo pip install -e pros-cli/
  - sudo apt-get install gcc-arm-none-eabi
  - sudo apt-get install build-essential
- - LD_LIBRARY_PATH = $LD_LIBRARY_PATH:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/i586-mingw32msvc/4.2.1-sjlj/
+ - LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/i586-mingw32msvc/4.2.1-sjlj/
  - export LD_LIBRARY_PATH
- - LIBRARY_PATH = $LIBRARY_PATH:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/i586-mingw32msvc/4.2.1-sjlj/
+ - LIBRARY_PATH=$LIBRARY_PATH:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/i586-mingw32msvc/4.2.1-sjlj/
  - export LIBRARY_PATH
 
 
