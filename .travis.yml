@@ -17,13 +17,8 @@ before_install:
 
 
 script: 
-  #- which gcc
-  #- gcc --version
-  - echo $LN
-  - echo $CC
-  - which CC
-  - which LN
-  - find /usr/ -name "libstdc++.a"
+  - echo $LD_LIBRARY_PATH
+  - echo $LIBRARY_PATH
   - cd skills18
   - make
 
