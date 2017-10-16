@@ -11,6 +11,8 @@ before_install:
  - git clone https://github.com/purduesigbots/pros-cli.git
  - sudo pip install -e pros-cli/
  - sudo apt-get install gcc-arm-none-eabi
+ - sudo apt-get install libstdc++6
+
 
 script: 
   - cd skills18
