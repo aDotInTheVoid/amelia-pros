@@ -7,6 +7,7 @@ python: 3.5
 before_install:
  - git clone https://github.com/purduesigbots/pros-cli.git
  - sudo pip install -e pros-cli/
+ - sudo apt-get install gcc-arm-none-eabi
 
 script: 
   - cd skills18
