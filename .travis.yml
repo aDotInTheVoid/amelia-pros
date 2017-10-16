@@ -12,6 +12,7 @@ before_install:
  - sudo pip install -e pros-cli/
  - sudo apt-get install gcc-arm-none-eabi
  - sudo apt-get install build-essential
+ - export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu/
 
 
 script: 
