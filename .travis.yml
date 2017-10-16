@@ -18,10 +18,9 @@ before_install:
 script: 
   #- which gcc
   #- gcc --version
-  - find /usr/ -name "libstdc++.so.6"
+  #- find /usr/ -name "libstdc++.so.6"
   - cd skills18
-  #- make -fno-exceptions
-
+  - make
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
