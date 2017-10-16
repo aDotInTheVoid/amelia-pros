@@ -1,14 +1,13 @@
 sudo: required
 
 before_install:
- - sudo add-apt-repository ppa:team-gcc-arm-embedded/ppa
- - sudo apt-get update
- - sudo apt-get install gcc-arm-none-eabi
+ - git clone https://github.com/purduesigbots/pros-cli.git
+ - pip install -e pros-cli/
 
 script: 
   - cd skills18
   - make
-  - make check_coverage
+
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
