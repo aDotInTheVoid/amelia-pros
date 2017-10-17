@@ -4,13 +4,15 @@ language: c
 
 python: 3.5
 
+os: osx
+
 notifications:
     email: false
 
 before_install:
     - git clone https://github.com/purduesigbots/pros-cli.git
     - sudo pip install -e pros-cli/
-    - sudo apt-get install gcc-arm-none-eabi
+    #- sudo apt-get install gcc-arm-none-eabi
 
     #- LD_LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/i586-mingw32msvc/4.2.1-sjlj/
     #- export LD_LIBRARY_PATH
@@ -21,8 +23,8 @@ before_install:
     #- PATH=$PATH:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/i586-mingw32msvc/4.2.1-sjlj/
     #- export PATH
    
-    - LD_LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/i586-mingw32msvc/4.2.1-sjlj/:$LD_LIBRARY_PATH
-    - export LD_LIBRARY_PATH
+    #- LD_LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/i586-mingw32msvc/4.2.1-sjlj/:$LD_LIBRARY_PATH
+    #- export LD_LIBRARY_PATH
 
    
 script: 
