@@ -10,8 +10,12 @@ notifications:
     email: false
 
 before_install:
-    - git clone https://github.com/purduesigbots/pros-cli.git
-    - sudo pip install -e pros-cli/
+    #- git clone https://github.com/purduesigbots/pros-cli.git
+    #- sudo pip install -e pros-cli/
+    
+    - brew tap SomaticLabs/gnu-arm-toolchain
+    - brew install gcc-arm-none-eabi
+    
     #- sudo apt-get install gcc-arm-none-eabi
 
     #- LD_LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/i586-mingw32msvc/4.2.1-sjlj/
