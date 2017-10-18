@@ -6,20 +6,26 @@ python: 3.5
 
 os: osx
 
-rvm:
-  - 2.2
-  - jruby
-  - 2.0.0-p247
-
 notifications:
     email: false
 
 before_install:
-    #- git clone https://github.com/purduesigbots/pros-cli.git
-    #- sudo pip install -e pros-cli/
+    - git clone https://github.com/purduesigbots/pros-cli.git
+    - sudo pip install -e pros-cli/
     
-    - brew tap SomaticLabs/gnu-arm-toolchain
-    - brew install gcc-arm-none-eabi
+    - curl -O http://svn.macports.org/repository/macports/downloads/MacPorts-1.5.0/MacPorts-1.5.0-10.4.dmg
+    - hdiutil attach MacPorts-1.5.0-10.4.dmg
+    - sudo installer -verbose -pkg /Volumes/MacPorts-1.5.0/MacPorts-1.5.0.pkg -target /
+    - export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+    - sudo port -v selfupdate
+    - hdiutil detach -verbose /dev/disk4
+    
+    - sudo port install arm-none-eabi-gcc
+    
+    
+    
+    #- brew tap SomaticLabs/gnu-arm-toolchain
+    #- brew install gcc-arm-none-eabi
     
     #- sudo apt-get install gcc-arm-none-eabi
 
