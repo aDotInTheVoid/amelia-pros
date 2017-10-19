@@ -1,0 +1,49 @@
+sudo: required
+
+language: c
+
+python: 3.5
+
+os: osx
+
+notifications:
+    email: false
+
+before_install:
+    - git clone https://github.com/purduesigbots/pros-cli.git
+    - sudo pip install -e pros-cli/
+    
+    #- curl -O http://svn.macports.org/repository/macports/downloads/MacPorts-1.5.0/MacPorts-1.5.0-10.4.dmg
+    #- hdiutil attach ~/Downloads/MacPorts-1.5.0-10.4.dmg
+    #- sudo installer -verbose -pkg /Volumes/MacPorts-1.5.0/MacPorts-1.5.0.pkg -target /
+    #- export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+    #- sudo port -v selfupdate
+    #- hdiutil detach -verbose /dev/disk4
+    
+    #- sudo port install arm-none-eabi-gcc
+    
+    
+    
+    - brew tap SomaticLabs/gnu-arm-toolchain
+    - brew update
+    - brew install gcc-arm-none-eabi
+    
+    #- sudo apt-get install gcc-arm-none-eabi
+
+    #- LD_LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/i586-mingw32msvc/4.2.1-sjlj/
+    #- export LD_LIBRARY_PATH
+   
+    #- LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/i586-mingw32msvc/4.2.1-sjlj/
+    #- export LIBRARY_PATH
+   
+    #- PATH=$PATH:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/i586-mingw32msvc/4.2.1-sjlj/
+    #- export PATH
+   
+    #- LD_LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/i586-mingw32msvc/4.2.1-sjlj/:$LD_LIBRARY_PATH
+    #- export LD_LIBRARY_PATH
+
+   
+script: 
+
+    - cd skills18
+    - make -j1 all

@@ -17,6 +17,7 @@
 #include "intake.h"
 
 const int joystickNumber = 1;
+const int armSpeed = 100;
 
 /*
  * Runs the user operator control code. This function will be started in its own task with the
@@ -47,11 +48,13 @@ void operatorControl() {
         // Get arm motion
         bool up = joystickGetDigital(joystickNumber, armButtons, JOY_UP);
         bool down = joystickGetDigital(joystickNumber, armButtons, JOY_DOWN);
-        armSet(up, down, 100);
+
+        armSet(up, down, armSpeed);
 
         // Get intake motion
         bool intakeUp = joystickGetDigital(joystickNumber, intakeButtons, JOY_UP);
         bool intakeDown = joystickGetDigital(joystickNumber, intakeButtons, JOY_DOWN);
         intakeSet(intakeUp, intakeDown, 100);
+
     }
 }
