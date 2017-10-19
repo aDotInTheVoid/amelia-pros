@@ -23,9 +23,9 @@ before_install:
     #- sudo port install arm-none-eabi-gcc
     
     
-    
+    - HOMEBREW_NO_AUTO_UPDATE=1
     - brew tap SomaticLabs/gnu-arm-toolchain
-    - brew update
+    #- brew update
     - brew install gcc-arm-none-eabi
     
     #- sudo apt-get install gcc-arm-none-eabi
