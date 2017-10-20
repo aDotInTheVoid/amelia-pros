@@ -8,8 +8,6 @@ notifications:
     email: false
 
 before_install:    
-
-    #- export HOMEBREW_NO_AUTO_UPDATE=1
     - brew update
     - brew tap SomaticLabs/gnu-arm-toolchain   
 
@@ -21,6 +19,3 @@ before_script:
 
 script: 
     - make -j1 all
-    
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
