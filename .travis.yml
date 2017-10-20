@@ -1,17 +1,25 @@
-sudo: required
-
 language: c
 
 python: 3.5
 
-before_install:
- - git clone https://github.com/purduesigbots/pros-cli.git
- - sudo pip install -e pros-cli/
+os: osx
+
+notifications:
+    email: false
+
+before_install:    
+
+    - export HOMEBREW_NO_AUTO_UPDATE=1
+    - brew tap SomaticLabs/gnu-arm-toolchain   
+
+install:
+    - brew install gcc-arm-none-eabi
+  
+before_script:
+    - cd skills18
 
 script: 
-  - cd skills18
-  - make
-
-
+    - make -j1 all
+    
 after_success:
   - bash <(curl -s https://codecov.io/bash)
