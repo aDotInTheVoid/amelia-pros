@@ -10,9 +10,9 @@ notifications:
     email: false
 
 before_install:    
-    - HOMEBREW_NO_AUTO_UPDATE=1
-    - export HOMEBREW_NO_AUTO_UPDATE
-     - brew tap SomaticLabs/gnu-arm-toolchain   
+
+    - export HOMEBREW_NO_AUTO_UPDATE=1
+    - brew tap SomaticLabs/gnu-arm-toolchain   
 
 install:
     - brew install gcc-arm-none-eabi
