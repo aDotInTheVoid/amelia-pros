@@ -24,10 +24,11 @@ before_install:
     
     
     - HOMEBREW_NO_AUTO_UPDATE=1
-    -  HOMEBREW_NO_AUTO_UPDATE=1 brew tap SomaticLabs/gnu-arm-toolchain
+    - export HOMEBREW_NO_AUTO_UPDATE
+    - brew tap SomaticLabs/gnu-arm-toolchain
     #- brew update
     #- brew install gcc-arm-none-eabi
-    - HOMEBREW_NO_AUTO_UPDATE=1 brew install gcc-arm-none-eabi
+    - brew install gcc-arm-none-eabi
 
     
     #- sudo apt-get install gcc-arm-none-eabi
