@@ -18,4 +18,4 @@ before_script:
     - cd skills18
 
 script: 
-    - make -j1 all
+    - make
