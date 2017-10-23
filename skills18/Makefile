@@ -50,8 +50,8 @@ $(BINDIR):
 # Compile program
 $(OUT): $(SUBDIRS) $(ASMOBJ) $(COBJ) $(CPPOBJ)
 	@echo LN $(BINDIR)/*.o $(LIBRARIES) to $@
-	@$(CC) $(LDFLAGS) $(BINDIR)/*.o $(LIBRARIES) -o $@
-	@$(MCUPREFIX)size $(SIZEFLAGS) $(OUT)
+	$(CC) $(LDFLAGS) $(BINDIR)/*.o $(LIBRARIES) -o $@
+	$(MCUPREFIX)size $(SIZEFLAGS) $(OUT)
 	$(MCUPREPARE)
 
 # Assembly source file management
