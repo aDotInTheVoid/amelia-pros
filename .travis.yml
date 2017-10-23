@@ -9,10 +9,12 @@ dist: trusty
 notifications:
     email: false
 
-
-
+before_install:
+    - sudo apt-get update
+    
 install:
     - sudo apt-get install gcc-arm-none-eabi
+    - sudo apt-get install gcc-multilib
   
 before_script:
     - cd skills18
