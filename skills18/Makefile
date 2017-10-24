@@ -26,6 +26,8 @@ OUT:=$(BINDIR)/$(OUTNAME)
 # By default, compile program
 all: $(BINDIR) $(OUT)
 
+travis: $(BINDIR)
+
 # Remove all intermediate object files (remove the binary directory)
 clean:
 	-rm -f $(OUT)
@@ -51,6 +53,13 @@ $(BINDIR):
 $(OUT): $(SUBDIRS) $(ASMOBJ) $(COBJ) $(CPPOBJ)
 	@echo LN $(BINDIR)/*.o $(LIBRARIES) to $@
 	$(CC) $(LDFLAGS) $(BINDIR)/*.o $(LIBRARIES) -o $@
+	$(MCUPREFIX)size $(SIZEFLAGS) $(OUT)
+	$(MCUPREPARE)
+
+# Compile program in travis
+$(TRAVISOUT): $(SUBDIRS) $(ASMOBJ) $(COBJ) $(CPPOBJ)
+	@echo LN $(BINDIR)/*.o $(LIBRARIES) to $@
+	$(CC) $(LDFLAGS) -L/usr/lib/gcc/x86_64-linux-gnu/4.8/ $(BINDIR)/*.o $(LIBRARIES) -o $@
 	$(MCUPREFIX)size $(SIZEFLAGS) $(OUT)
 	$(MCUPREPARE)
 
