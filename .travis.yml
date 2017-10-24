@@ -20,4 +20,4 @@ before_script:
     - cd skills18
 
 script: 
-    - make
+    - make travis
