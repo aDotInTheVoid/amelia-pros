@@ -26,7 +26,7 @@ OUT:=$(BINDIR)/$(OUTNAME)
 # By default, compile program
 all: $(BINDIR) $(OUT)
 
-travis: $(BINDIR)
+travis: $(BINDIR) $(TRAVISOUT)
 
 # Remove all intermediate object files (remove the binary directory)
 clean:
