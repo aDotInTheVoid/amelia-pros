@@ -1,21 +1,23 @@
+sudo: required
+
 language: c
 
 python: 3.5
 
-os: osx
+dist: trusty
 
 notifications:
     email: false
 
-before_install:    
-    - brew update
-    - brew tap SomaticLabs/gnu-arm-toolchain   
-
+before_install:
+    - sudo apt-get update
+    
 install:
-    - brew install gcc-arm-none-eabi
+    - sudo apt-get install gcc-arm-none-eabi
+    - sudo apt-get install gcc-multilib
   
 before_script:
     - cd skills18
 
 script: 
-    - make
+    - make travis
