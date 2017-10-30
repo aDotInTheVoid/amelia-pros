@@ -14,8 +14,7 @@ before_install:
     
 install:
     - sudo apt-get install gcc-arm-none-eabi
-    - sudo apt-get install gcc-multilib
-  
+    
 before_script:
     - cd skills18
 
