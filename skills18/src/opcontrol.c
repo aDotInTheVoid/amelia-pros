@@ -15,10 +15,12 @@
 #include "arm.h"
 #include "config.h"
 #include "intake.h"
+#include "claw.h"
 
 const int joystickNumber = 1;
 const int armSpeed = 100;
 const int intakeSpeed = 100;
+const int clawSpeed = 100;
 
 /*
  * Runs the user operator control code. This function will be started in its own task with the
@@ -41,21 +43,25 @@ void operatorControl() {
     while (1) {
 
         // Get chassis motion
-        int forward = joystickGetAnalog(joystickNumber, forwardJoystick);
+        int forw = joystickGetAnalog(joystickNumber, forwardJoystick);
         int side = joystickGetAnalog(joystickNumber, sideJoystick);
         int turn = joystickGetAnalog(joystickNumber, turnJoystick);
-        chassisSet(forward, side, turn);
+        chassisSet(forw, side, turn);
 
         // Get arm motion
-        bool up = joystickGetDigital(joystickNumber, armButtons, JOY_UP);
+        bool up   = joystickGetDigital(joystickNumber, armButtons, JOY_UP);
         bool down = joystickGetDigital(joystickNumber, armButtons, JOY_DOWN);
 
         armSet(up, down, armSpeed);
 
         // Get intake motion
-        bool intakeUp = joystickGetDigital(joystickNumber, intakeButtons, JOY_UP);
+        bool intakeUp   = joystickGetDigital(joystickNumber, intakeButtons, JOY_UP);
         bool intakeDown = joystickGetDigital(joystickNumber, intakeButtons, JOY_DOWN);
         intakeSet(intakeUp, intakeDown, intakeSpeed);
+
+        // Get Claw motion
+        bool clawOpen  = joystickGetDigital(joystickNumber, clawButtons, JOY_UP);
+        bool clawClose = joystickGetDigital(joystickNumber, clawButtons, JOY_DOWN);
 
     }
 }
