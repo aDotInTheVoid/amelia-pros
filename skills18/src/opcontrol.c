@@ -62,6 +62,7 @@ void operatorControl() {
         // Get Claw motion
         bool clawOpen  = joystickGetDigital(joystickNumber, clawButtons, JOY_UP);
         bool clawClose = joystickGetDigital(joystickNumber, clawButtons, JOY_DOWN);
+        clawSet(clawOpen, clawClose, clawSpeed);
 
     }
 }
