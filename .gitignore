@@ -90,6 +90,7 @@ dkms.conf
 #---Editors---
 .idea
 .vscode
+fix.sh
 
 
 
