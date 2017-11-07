@@ -7,13 +7,13 @@ void armSet(bool up, bool down, int speed)
     if (up) {
         motorSet(leftArmMotor, speed);
         motorSet(rightArmMotor, -speed);
-
+        // TODO: Fix PID Master/Slave
         motorSet(clawLiftMotor, -speed * (2.0/3.0));
 
     } else if (down) {
         motorSet(leftArmMotor, -speed);
         motorSet(rightArmMotor, speed);
-
+        // TODO: Fix PID Master/Slave
         motorSet(clawLiftMotor, speed * (2.0/3.0));
     } else {
         motorSet(leftArmMotor, 0);
