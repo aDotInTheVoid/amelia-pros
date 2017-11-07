@@ -1,6 +1,8 @@
 #ifndef _SLAVE_MASTER_H_
 #define _SLAVE_MASTER_H_
 
+#include "main.h"
+
 typedef struct SlaveMasterParams {
     int master;
     int slave;
@@ -9,9 +11,15 @@ typedef struct SlaveMasterParams {
     int master_encoder;
     double cog_diff;
     int *current_state;
+    Mutex mutex;
 } smp;
 
-int* setup_slave_master(int mst, int slv, int ispeed,
+typedef struct SlaveMasterData {
+    int *state;
+    Mutex mutex;
+} smd;
+
+smd setup_slave_master(int mst, int slv, int ispeed,
     int s_enc, int m_enc, double diff);
 
 void slave_master(void * params);
