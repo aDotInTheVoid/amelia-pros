@@ -29,6 +29,7 @@ void slave_master (void *params) {
 smd setup_slave_master(int mst, int slv, int ispeed,
     int s_enc, int m_enc, double diff)
 {
+    // TODO: Work out what the plural of mutex is
     Mutex mut = mutexCreate();
     int * cst = (int*) malloc(sizeof(int));
     *cst = 0;
