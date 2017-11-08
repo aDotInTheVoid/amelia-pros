@@ -17,6 +17,7 @@ typedef struct SlaveMasterParams {
 typedef struct SlaveMasterData {
     int *state;
     Mutex mutex;
+    int speed;
 } smd;
 
 smd setup_slave_master(int mst, int slv, int ispeed,

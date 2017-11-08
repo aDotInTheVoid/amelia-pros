@@ -16,6 +16,7 @@
 #include "config.h"
 #include "intake.h"
 #include "claw.h"
+#include "slavemaster.h"
 
 const int joystickNumber = 1;
 const int armSpeed = 100;
@@ -40,6 +41,7 @@ const int clawSpeed = 100;
  * This task should never exit; it should end with some kind of infinite loop, even if empty.
  */
 void operatorControl() {
+    smd armData = armSetup(armSpeed);
     while (1) {
 
         // Get chassis motion
@@ -52,7 +54,7 @@ void operatorControl() {
         bool up   = joystickGetDigital(joystickNumber, armButtons, JOY_UP);
         bool down = joystickGetDigital(joystickNumber, armButtons, JOY_DOWN);
 
-        armSet(up, down, armSpeed);
+        armSet(up, down, armData);
 
         // Get intake motion
         bool intakeUp   = joystickGetDigital(joystickNumber, intakeButtons, JOY_UP);

@@ -30,12 +30,12 @@ smd setup_slave_master(int mst, int slv, int ispeed,
     int s_enc, int m_enc, double diff)
 {
     // TODO: Work out what the plural of mutex is
-    Mutex mut = mutexCreate();
+    Mutex mutex = mutexCreate();
     int * cst = (int*) malloc(sizeof(int));
     *cst = 0;
     smp params = (smp) {
-        mst, slv, ispeed, s_enc, m_enc, diff, cst, mut
+        mst, slv, ispeed, s_enc, m_enc, diff, cst, mutex
     };
     taskCreate(slave_master, TASK_DEFAULT_STACK_SIZE, &params, TASK_PRIORITY_DEFAULT);
-    return (smd) {cst, mut};
+    return (smd) {cst, mutex, ispeed};
 }
