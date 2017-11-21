@@ -2,16 +2,16 @@
 #define _CONFIG_H_
 
 enum Motor {
-    leftIntakeMotor = 1,
-    rightFrontMotor, // 2
-    leftBackMotor, // 3
-    rightBackMotor, // 4
-    leftFrontMotor, // 5
-    leftArmMotor, // 6
-    rightArmMotor, // 7
-    clawLiftMotor, // 8
-    clawMotor, // 9
-    rightIntakeMotor, // 10
+    rightFrontMotor = 1,
+    leftFrontMotor,
+    rightBackMotor,
+    rightArmMotor,
+    leftIntakeMotor,
+    rightIntakeMotor,
+    clawLiftMotor,
+    leftArmMotor,
+    clawMotor,
+    leftBackMotor
 };
 
 enum Joystick {
