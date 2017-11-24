@@ -40,6 +40,7 @@ const int clawSpeed = 100;
  * This task should never exit; it should end with some kind of infinite loop, even if empty.
  */
 void operatorControl() {
+    printf("Top of the loop\n");
     while (1) {
 
         // Get chassis motion
@@ -47,22 +48,21 @@ void operatorControl() {
         int side = joystickGetAnalog(joystickNumber, sideJoystick);
         int turn = joystickGetAnalog(joystickNumber, turnJoystick);
         chassisSet(forw, side, turn);
-
+        printf("c");
         // Get arm motion
         bool up   = joystickGetDigital(joystickNumber, armButtons, JOY_UP);
         bool down = joystickGetDigital(joystickNumber, armButtons, JOY_DOWN);
-
         armSet(up, down, armSpeed);
-
+        printf("a");
         // Get intake motion
         bool intakeUp   = joystickGetDigital(joystickNumber, intakeButtons, JOY_UP);
         bool intakeDown = joystickGetDigital(joystickNumber, intakeButtons, JOY_DOWN);
         intakeSet(intakeUp, intakeDown, intakeSpeed);
-
+        printf("i");
         // Get Claw motion
         bool clawOpen  = joystickGetDigital(joystickNumber, clawButtons, JOY_UP);
         bool clawClose = joystickGetDigital(joystickNumber, clawButtons, JOY_DOWN);
         clawSet(clawOpen, clawClose, clawSpeed);
-
+        printf("l")
     }
 }

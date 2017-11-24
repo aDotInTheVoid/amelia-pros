@@ -30,6 +30,7 @@
  * This task should never exit; it should end with some kind of infinite loop, even if empty.
  */
 void operatorControl() {
+	printf("In opcon!\n");
 	while (1) {
 		motorSet(1, 100);
 		delay(20);
